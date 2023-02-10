@@ -1,6 +1,7 @@
-let button = document.querySelector(".button");
-let write = document.querySelector(".write");
-let info = document.querySelector(".info");
+const button = document.querySelector(".button"),
+      write = document.querySelector(".write"),
+      info = document.querySelector(".info"),
+      form = document.querySelector("form")
 
 let array =[]
 
@@ -19,7 +20,7 @@ button.addEventListener("click",(e)=>{
         array.push(newGoal);
         createGoalsList(array, info);
     }
-
+  form.reset()
  localStorage.setItem("note",JSON.stringify(array));
 })
 
@@ -27,7 +28,7 @@ function createGoalsList(goal,parent){
     parent.innerHTML = '';
  
      goal.forEach((elem,i)=>{
-         parent.innerHTML += `<li class="promo__interactive-item">${i+1} ${elem}
+         parent.innerHTML += `<li class="promo__interactive-item">${i+1}) ${elem}
      </li>`
      })
  
